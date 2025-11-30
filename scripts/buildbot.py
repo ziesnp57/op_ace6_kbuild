@@ -12,6 +12,7 @@ CHAT_ID = os.environ.get("CHATID")
 MESSAGE_THREAD_ID = os.environ.get("MESSAGE_THREAD_ID")
 KSUVAR = os.environ.get("KSUVAR")
 SUSFS = os.environ.get("SUSFS")
+mountify = os.environ.get("mountify")
 BBG = os.environ.get("BBG")
 MSG_TEMPLATE = """
 **New Build Published!**
@@ -22,6 +23,7 @@ KsuVar: {ksuvar}
 KsuVersion: {Ksuver}
 SUSFS: {SUSFS}
 BBG: {BBG}
+Mountify support: {mountify}
 ```
 Please follow @gki_kernels_xiaoxiaow !
 """.strip()
@@ -34,9 +36,10 @@ def get_caption():
         Ksuver=ksuver,
         BBG=BBG,
         SUSFS=SUSFS,
+        mountify=mountify，
     )
     if len(msg) > 1024:
-        return f"{DEVICE}{kernelversion}"
+        return f"{KSUVAR} {ksuver} {kernelversion}"
     return msg
 
 

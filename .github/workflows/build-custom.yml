@@ -22,7 +22,10 @@ on:
           type: boolean
           description: "启用 SUSFS"
           default: false
-
+        mountify:
+          type: boolean
+          description: "启用 Mountify 模块支持"
+          default: false
 jobs:
   Build-Kernel:
     name: "Build kernel normal"
@@ -97,6 +100,9 @@ jobs:
           if [ "${{ github.event.inputs.BBG }}" == "true" ]; then
             ARGS+=" --with-bbg"
           fi
+          if [ "${{ github.event.inputs.mountify }}" == "true" ]; then
+            ARGS+=" --mountify"
+          fi
           cd kernel_workspace
           ./configure $ARGS
 
@@ -136,5 +142,6 @@ jobs:
           KSUVAR: ${{ github.event.inputs.KSU }}
           SUSFS: ${{ github.event.inputs.SUSFS }}
           BBG: ${{ github.event.inputs.BBG }}
+          mountify: ${{ github.event.inputs.mountify }}
          
          
