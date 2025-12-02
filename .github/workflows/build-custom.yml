@@ -51,9 +51,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /home/runner/.ccache
-          key: ccache-${{ runner.os }}-${{ github.ref }}
+          key: ccache-${{ runner.os }}-${{ github.event.inputs.KSU }}-${{ github.ref }}
           restore-keys: |
-            ccache-${{ runner.os }}-
+            ccache-${{ runner.os }}-${{ github.event.inputs.KSU }}-
 
       - name: Set git config
         run: |
