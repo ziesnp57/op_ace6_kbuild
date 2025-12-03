@@ -69,7 +69,7 @@ jobs:
          cd kernel_workspace/
          git clone https://github.com/luyancib-org/Anykernel3 --depth=1
          rm -rf Anykernel3/.git
-         cp kernel_platform/common/out/arch/arm64/boot/Image.gz ./Anykernel3/Image
+         cp kernel_platform/common/out/arch/arm64/boot/Image.gz ./Anykernel3/Image.gz
          cd Anykernel3
          zip -q -r "../AnyKernel3_Op_ACE6.zip" ./*
 
