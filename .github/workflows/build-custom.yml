@@ -137,7 +137,7 @@ jobs:
           cd kernel_workspace
           ./configure $ARGS
 
-      - name: build
+      - name: 构建
         run: |
           export PATH="/usr/lib/ccache:$GITHUB_WORKSPACE/kernel_workspace/kernel_platform/prebuilts/clang/host/linux-x86/clang-r510928/bin:$PATH" 
           export PATH="/usr/lib/ccache:$PATH"
