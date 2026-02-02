@@ -161,6 +161,13 @@ jobs:
           name: Anykernel3
           path: kernel_workspace/AnyKernel3_Op_ACE6.zip
 
+
+      - name: 上传AnyKernel3
+        uses: actions/upload-artifact@v3
+        with:
+          name: AnyKernel3-${{ env.BUILD_TIME }}
+          path: kernel_workspace/AnyKernel3/*
+
       - name: Upload to telegram
         run: |
           if [ ! -z "${{ secrets.BOT_TOKEN }}" ]; then
